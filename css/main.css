@@ -38,6 +38,10 @@ body {
 	font-family: "Raleway", sans-serif;
 }
 
+span {
+    font-family: "Raleway", sans-serif;
+}
+
 * {
 	box-sizing: border-box;
 	/*border: 1px solid red !important;*/
@@ -108,4 +112,8 @@ ul#certificates li a {
 
 ul#certificates li a i{
 	color: #d10654;
+}
+
+input {
+    width: 25%;
 }

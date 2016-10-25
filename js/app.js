@@ -1,29 +1,32 @@
-var model = {
-	//get csv or JSON file
-	//pass each name to octopus
-	init: function(){
-		return asistentes;
-	}
-};
-var octopus = {
-	init: function(){
-		this.asistenteArr = model.init();
-		for(var a = 0; a < this.asistenteArr.length; a++){
-			view.init(this.asistenteArr[a].Uppercase);
-		}
-	}
+ko.utils.stringStartsWith = function (string, startsWith) {        	
+            string = string || "";
+            if (startsWith.length > string.length)
+                return false;
+            return string.substring(0, startsWith.length) === startsWith;
+}
 
-};
-var view = {
-	//render name as a list item
-	init: function(a){
-		view.render(a);
-	},
-	render: function(asist){
-		var list = '<li><a href="./certificates/%data%.pdf"><i class="icon-download"></i> %data%</a></li>';
-		var li = list.replace(/%data%/g, asist);
-		document.getElementById("certificates").innerHTML += li;
-	}
-};
+var viewmodel = function(){
+    var self = this;
+    self.asistentesLgbt = ko.observableArray();
+    
+    asistentes.forEach(function(item){
+        self.asistentesLgbt.push({
+            'name' : item.Uppercase,
+            'url' : '../certificates/' + item.Uppercase + '.pdf'
+        });
+    });
+    
+    self.filter = ko.observable("");
+    self.filterAsistentes = ko.computed(function(){
+        var filter = this.filter().toUpperCase();
+        if(!filter){
+            return self.asistentesLgbt();
+        } else {
+            return ko.utils.arrayFilter(self.asistentesLgbt(), function(item){
+                return ko.utils.stringStartsWith(item.name, filter);
+            });
+        }
+    })
+}
 
-octopus.init();
+ko.applyBindings(viewmodel);

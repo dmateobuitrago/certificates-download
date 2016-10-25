@@ -17,10 +17,11 @@
     			<img src="img/logo.png" alt="Logo LGBT Confex" height="150px">
 			</a>
 			<h2>Descarga tu certificado</h2>
-			<span>Tip: Busca tu nombre usando <strong class="shortcut">CTRL + F</strong> en Windows o <strong class="shortcut"><i class="icon-command"></i> + F</strong> en Mac</span>
+			<input type="text" placeholder="Escribe tu nombre..." data-bind="value: filter, valueUpdate: 'afterkeydown'">
 		</div>
 		<div class="container">
-			<ul id="certificates">
+			<ul id="certificates" data-bind="foreach: filterAsistentes">
+			    <li><a data-bind="attr: {href: url}"><i class="icon-download"> <span data-bind="text: name"></span></i></a></li>
 			</ul>
 		</div>
 	</div>
