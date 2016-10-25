@@ -117,3 +117,23 @@ ul#certificates li a i{
 input {
     width: 25%;
 }
+
+footer {
+    text-align: center;
+    background-color: #ededed;
+    border-top: 1px solid #dcdcdc;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:visited {
+    color: #d10654;
+}
