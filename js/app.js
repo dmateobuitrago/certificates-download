@@ -12,7 +12,7 @@ var viewmodel = function(){
     asistentes.forEach(function(item){
         self.asistentesLgbt.push({
             'name' : item.Uppercase,
-            'url' : '../certificates/' + item.Uppercase + '.pdf'
+            'url' : './certificates/' + item.Uppercase + '.pdf'
         });
     });
     
