@@ -56,7 +56,6 @@ span {
 }
 
 .container {
-	width: 800px;
 	margin: 0 auto;
 }
 
@@ -66,7 +65,7 @@ span {
 	color: #444;
 	background-color: #ddd;
 	-webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+  -moz-border-radius: 5px;
 	border-radius: 5px;
 }
 
@@ -75,47 +74,63 @@ ul#certificates {
 	padding-left: 0;
 }
 
-ul#certificates li {
-	float: left;
-	padding: 10px 5px 10px 10px;
-	height: 50px;
-    font-size: 0.9em;
-	border: 1px solid #ccc;
-	display: inline-block;
-    width: calc((100% - 8px) / 3);
-    margin-right: 4px;
-    margin-top: 4px;
-    transition: all 0.2s ease-in;
-}
-
 ul#certificates li:hover {
-	transform: translateY(-40px);
-	transform: scale(1.05);
+	transform: translateY(-10px);
 	background-color: #fefefe;
 	-webkit-box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.29);
-    -moz-box-shadow:    0px 10px 5px 0px rgba(50, 50, 50, 0.29);
+  -moz-box-shadow:    0px 10px 5px 0px rgba(50, 50, 50, 0.29);
 	box-shadow:         0px 10px 5px 0px rgba(50, 50, 50, 0.29);
 }
 
-ul#certificates li:nth-child(3n){
-	margin-right: 0;
-}
+ul#certificates li {
+  font-size: 0.9em;
+  margin: 10px 0;
+  padding: 10px;
+  transition: all 0.2s ease-in;
+  border: 1px solid #ccc;
+} 
 
 
 ul#certificates li a {
 	text-decoration: none;
 	color: #08064c;
-	padding-top: 10px;
-    padding-bottom: 22px;
-    padding-right: 121px;
 }
 
 ul#certificates li a i{
 	color: #d10654;
 }
 
+@media screen and (min-width: 880px) {
+  ul#certificates li a {
+    padding: 20px 0;
+  }
+
+  .container {
+    width: 800px;
+  }
+
+  ul#certificates li {
+    text-align: left;
+    float: left;
+    height: 50px;
+    display: inline-block;
+    width: calc((100% - 8px) / 3);
+    margin-right: 4px;
+    margin-top: 4px;
+    transition: all 0.2s ease-in;
+  } 
+
+  ul#certificates li:nth-child(3n){
+    margin-right: 0;
+  }
+}
+
+label {
+  margin-right: 10px;
+}
+
 input {
-    width: 25%;
+    width: 300px;
 }
 
 footer {
